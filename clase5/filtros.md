@@ -42,3 +42,23 @@ SELECT producto, precio
   WHERE precio 
 			BETWEEN 100 AND 1000
 ```
+```sql
+-- todos los clientes con fecha de alta entre junio y agosto
+SELECT nombre, apellido, telefono
+FROM clientes
+WHERE fechaAlta 
+          BETWEEN  '2024-06-01' AND '2024-08-31';
+```
+```sql
+-- obtener los productos de las marcas 1 y 10
+-- con un precio hasta 1000
+SELECT producto, precio
+FROM productos
+WHERE (idMarca = 1  or idMarca = 10)
+  AND precio <= 1000; 
+-- 
+SELECT producto, precio
+FROM productos
+WHERE idMarca IN(1, 10)
+  AND precio <= 1000;
+```
